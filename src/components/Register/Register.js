@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/UserContext';
 import "./Register.css"
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext);
+
     const handleRegistration = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -14,8 +17,23 @@ const Register = () => {
         const password = form.password.value;
         const confirmPassword = form.confirmPassword.value;
 
-        console.log(fullName, email, password, confirmPassword);
+            if (password !== confirmPassword) {
+                alert("Password is not matched");
+                return;
+            }
+
+        handleCreateUser(email, password)
     }
+
+    const handleCreateUser = (email, password) => {
+        createUser(email,password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+        })
+        .catch((error) => console.log(error))
+    }
+
     return (
     <div>
             <form onSubmit={handleRegistration} className='w-25 register-form border text-center mx-auto p-2  my-3'>
