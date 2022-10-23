@@ -6,6 +6,7 @@ import Home from '../components/Home/Home';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Main from '../Layout/Main';
+import PrivateRoute from './PrivateRoute';
 
 const routes = createBrowserRouter([
     {
@@ -23,11 +24,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: "/destination",
-                element: <Destination />
+                element: <PrivateRoute> <Destination /> </PrivateRoute>
             },
             {
                 path: "/places/:id",
-                element: <Destination />
+                element: <PrivateRoute> <Destination /> </PrivateRoute>
             },
             {
                 path: "/register",
