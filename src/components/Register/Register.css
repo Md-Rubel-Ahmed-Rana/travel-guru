@@ -1,0 +1,31 @@
+.register-form h6{
+    font-size: 16px;
+    text-align: left;
+    margin: 0px;
+}
+.register-form p{
+    font-size: 13px;
+    margin-top: 5px;
+}
+.register-form button{
+    font-size: 14px;
+}
+.register-form input{
+    border: none;
+    border-bottom: 1px solid;
+    display: block;
+    outline: none;
+    margin: 20px auto;
+    width: 100%;
+    font-size: 10px;
+}
+
+.signin-option{
+    width: 250px;
+    margin: 0px auto;
+}
+
+.divider{
+    width: 250px;
+    margin: 5px auto;
+}
